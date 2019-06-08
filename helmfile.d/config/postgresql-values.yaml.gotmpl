@@ -3,10 +3,7 @@
 ## Current available global Docker image parameters: imageRegistry and imagePullSecrets
 ##
 global:
-  postgresql:
-    postgresqlUsername: '{{ env "DB_USER" | default "synapse_user" }}'
-    postgresqlPassword: '{{ env "DB_PASSWORD" | default "pass" }}'
-
+  postgresql: {}
 #   imageRegistry: myRegistryName
 #   imagePullSecrets:
 #     - myRegistryKeySecretName

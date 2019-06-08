@@ -9,7 +9,7 @@ repositories:
 releases:
 - name: matrix-server
   chart: w3f/matrix-server
-  version: v0.4.1
+  version: v0.4.2
   values:
   - environment: {{ .Environment.Name }}
   - db:
@@ -23,12 +23,15 @@ releases:
     formSecret: {{ env "FORM_SECRET" | default "form_secret" }}
     signingKey: {{ env "SIGNING_KEY" | default "signing_key" | quote }}
     domain: polkadot.builders
+    emailPattern: '.*'
+    autojoinRooms:
+    - "#arrivals:polkadot.builders"
 
 - name: riot-web
   chart: w3f/riot-web
-  version: v0.4.1
+  version: v0.4.2
   values:
   - environment: {{ .Environment.Name }}
-    domain: w3f.community
+    domain: polkadot.builders
     matrixDomain: polkadot.builders
     brand: "Polkadot Builders"
