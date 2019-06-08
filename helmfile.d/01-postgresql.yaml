@@ -5,6 +5,6 @@ environments:
 releases:
 - name: postgresql
   chart: stable/postgresql
-  version: 3.17.0
+  version: 5.3.4
   values:
   - ./config/postgresql-values.yaml.gotmpl
