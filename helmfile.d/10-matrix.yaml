@@ -9,8 +9,11 @@ repositories:
 releases:
 - name: matrix-server
   chart: w3f/matrix-server
-  version: v0.4.2
+  version: v0.5.0
   values:
+  - image:
+      repo: web3f/synapse
+      tag: v0.99.5.2-antiscam
   - environment: {{ .Environment.Name }}
   - db:
       user: {{ env "DB_USER" | default "synapse_user" }}
@@ -26,6 +29,7 @@ releases:
     emailPattern: '.*'
     autojoinRooms:
     - "#arrivals:polkadot.builders"
+    antiscam: true
 
 - name: riot-web
   chart: w3f/riot-web
